@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<input id="getCity" type="text"  placeholder="Enter city">
+<button id="submit" type="submit">Find the weather!</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<p>The temperature is:</p>
+<p id="printer"></p>
+
+<script>
+$(document).ready(function()
+{
+	$("#submit").click(function()
+	{
+		var city=$("#getCity").val();
+		$.ajax({
+			url:"http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d111351302077a3859c547b321748d86",
+			dataType:"json",
+			success:function(data)
+			{
+				var x= data.main.temp;
+				var y=x-273;
+				$("#printer").html(y);
+
+			}
+		});
+	});
+});
+
+
+
+
+</script>
+</body>
+</html>
