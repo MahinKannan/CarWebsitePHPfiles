@@ -20,7 +20,7 @@ $(document).ready(function()
 	{
 		var city=$("#getCity").val();
 		$.ajax({
-			url:"http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d111351302077a3859c547b321748d86",
+			url:"http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d121748d86",
 			dataType:"json",
 			success:function(data)
 			{
